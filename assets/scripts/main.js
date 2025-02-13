@@ -17,7 +17,27 @@ document.addEventListener('DOMContentLoaded', () => {
             if (document.querySelector('.site-navigation'))
                 document.querySelector('.site-navigation').style.left = '-100%';
 
-                document.getElementById('hide-mobile-menu').style.display = 'none';
+            document.getElementById('hide-mobile-menu').style.display = 'none';
         });
     }
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const lazySection = entry.target;
+                const bgUrl = lazySection.getAttribute('data-bg');
+                lazySection.style.backgroundImage = bgUrl; 
+
+                observer.unobserve(lazySection);
+            }
+        });
+    }, {
+        rootMargin: '200px',
+        threshold: 0.1 
+    });
+
+    const lazySections = document.querySelectorAll('.lazy');
+    lazySections.forEach(section => {
+        observer.observe(section);
+    });
 });
