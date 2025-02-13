@@ -10,7 +10,7 @@ h2,
 h3,
 h4 {
     text-align: center;
-    font-display: swap; 
+    font-display: swap;
 }
 
 /* Site Header */
@@ -171,11 +171,19 @@ h4 {
     line-height: 1.4;
 }
 
-.title-container span {
+.title-container span,
+.title-container p {
     font-size: 14px;
-    color: #666;
+    color: #555;
     line-height: 1.4;
     font-weight: 400;
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.about-container {
+    min-height: 300px;
 }
 
 .about-container,
@@ -194,21 +202,52 @@ h4 {
     padding: 20px;
 }
 
+.about-container h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.quote {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+}
+
 .about-container p {
     font-size: 14px;
-    color: #666;
+    color: #555;
     line-height: 1.5;
     max-width: 700px;
     margin: 0 auto;
 }
 
+.about-container ul {
+    padding-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.about-container ul li {
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
 .about-container .right-side {
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .about-container .right-side img,
 .what-theracounsel-can-do .left-side img {
-    max-width: 100%;
+    width: auto;
     height: auto;
     border-radius: 10px;
 }
@@ -247,7 +286,7 @@ h4 {
 
 .more-about-us .card p {
     font-size: 14px;
-    color: #666;
+    color: #555;
     line-height: 1.5;
     margin-bottom: 20px;
     min-height: 80px;
@@ -277,7 +316,7 @@ h4 {
 
 .what-theracounsel-can-do .right-side p {
     font-size: 14px;
-    color: #666;
+    color: #555;
     margin-bottom: 20px;
     line-height: 1.5;
 }
@@ -349,6 +388,12 @@ h4 {
 
 /* Tablets and below */
 @media (max-width: 1024px) {
+
+    .about-container .right-side img,
+    .what-theracounsel-can-do .left-side img {
+        max-width: 100%;
+    }
+
     .header-container {
         flex-direction: column;
         align-items: flex-start;
@@ -417,6 +462,16 @@ h4 {
     .what-theracounsel-can-do .container {
         flex-direction: column;
         align-items: center;
+    }
+
+    .about-container .right-side.swapped {
+        order: 1;
+    }
+
+    .about-section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .about-container .left-side,
