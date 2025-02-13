@@ -38,7 +38,7 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Fauna+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet" media="all">
-        
+
         <link rel="stylesheet" href="assets/styles/style.css">
         <link rel="preload" href="assets/images/home-page.webp" as="image">
 
@@ -85,8 +85,15 @@
             </a>
             <nav class="site-navigation">
                 <ul class="nav-list">
-                    <li class="nav-item" id="hide-mobile-menu"><button><i class="fa-solid fa-xmark"></i></button></li>
-
+                    <li class="nav-item" id="hide-mobile-menu">
+                        <button aria-label="Close menu">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 18L18 6M6 6L18 18" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </li>
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="vision-and-mission-statement.html" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="theracounselers-and-licensed-clinical-social-workers.html"
@@ -112,7 +119,12 @@
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
-            <button id="show-mobile-menu"><i class="fa-solid fa-bars"></i></button>
+            <button id="show-mobile-menu" aria-label="Open menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
         </div>
     </header>
 
@@ -130,7 +142,7 @@
         <section class="about-section">
             <div class="title-container">
                 <h2>TheraCouncel, Inc. <br> Your Path to Emotional Healing <br>
-                    <span>Because You Matter: Personalized Mental Health Care and Support</span>
+                    <span>Because You Matter: <br> Personalized Mental Health Care and Support</span>
                 </h2>
             </div>
             <div class="about-container">

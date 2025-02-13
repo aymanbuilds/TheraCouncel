@@ -235,7 +235,6 @@ h4 {
 
 .more-about-us .card {
     border-radius: 10px;
-    padding: 20px;
     width: 350px;
 }
 
@@ -435,7 +434,6 @@ h4 {
     }
 }
 
-/* Mobile Phones */
 @media (max-width: 768px) {
     .home-section h1 {
         font-size: 28px;
