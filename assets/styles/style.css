@@ -150,6 +150,14 @@ h4 {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.home-content{
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .home-content h1 {
     font-size: 34px;
     max-width: 800px;
