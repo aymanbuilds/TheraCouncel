@@ -2,9 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
     font-family: "Montserrat", serif;
 }
 
@@ -123,11 +120,12 @@ h4 {
 
 /* Home Section */
 .home-section {
+    width: 100%;
+    height: 600px;
     background-color: #000;
     background-image: url('../images/home-page.webp');
     background-size: cover;
     background-position: center;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,7 +147,7 @@ h4 {
     margin: 0 auto;
 }
 
-.home-content p a{
+.home-content p a {
     color: white;
 }
 
@@ -316,7 +314,7 @@ h4 {
 }
 
 .visit-us-facebook .logo-link img {
-    max-width: 200px;
+    width: 143;
     height: auto;
 }
 
