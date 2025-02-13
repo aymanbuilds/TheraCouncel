@@ -32,8 +32,41 @@
 
         <title>TheraCouncel - Mental Health Therapy in Fort Lauderdale</title>
 
+        <!-- Preload Google Fonts (without immediately applying them) -->
+        <link rel="preload"
+            href="https://fonts.googleapis.com/css2?family=Fauna+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            as="style">
+
+        <!-- Preload Font Awesome CSS -->
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            as="style">
+
+        <!-- Apply Google Fonts and Font Awesome with <link> tag -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fauna+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet" media="all">
+
+        <!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            media="all">
+
+        <!-- Critical Styles -->
         <link rel="stylesheet" href="assets/styles/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <!-- Add fallback for fonts with `font-display: swap` -->
+        <style>
+            @font-face {
+                font-family: 'Fauna One';
+                src: url('https://fonts.googleapis.com/css2?family=Fauna+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: 'Montserrat';
+                src: url('https://fonts.googleapis.com/css2?family=Fauna+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+                font-display: swap;
+            }
+        </style>
 
         <script type="application/ld+json">
         {
