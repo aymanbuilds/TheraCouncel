@@ -150,7 +150,7 @@ h4 {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.home-content{
+.home-content {
     min-height: 600px;
     display: flex;
     flex-direction: column;
@@ -442,7 +442,7 @@ h4 {
     background: #fff;
     border-radius: 12px;
     padding: 20px;
-    max-width: 350px;
+    width: 350px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
@@ -478,6 +478,21 @@ h4 {
     max-width: 600px;
     text-align: center;
     margin: 0 auto;
+}
+
+.specialist-card ul {
+    list-style-type: disc;
+}
+
+.specialist-card ul li {
+    font-size: 13px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
 }
 
 /* Tablets and below */
