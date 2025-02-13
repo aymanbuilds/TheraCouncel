@@ -1,0 +1,465 @@
+@import url('https://fonts.googleapis.com/css2?family=Fauna+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    text-align: center;
+}
+
+/* Site Header */
+.site-header {
+    padding: 10px 20px;
+    background-color: #fff;
+    position: relative;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 120px;
+}
+
+.site-navigation {
+    display: flex;
+    align-items: center;
+    z-index: 999;
+    background-color: white;
+}
+
+.nav-list {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-item {
+    position: relative;
+    margin: 0 15px;
+}
+
+.nav-link {
+    color: #3a3636;
+    font-size: 15px;
+    padding: 10px 7px;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 1px solid #ddd;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.submenu-link {
+    white-space: nowrap;
+    color: #333;
+    padding: 10px 7px;
+    font-size: 14px;
+    display: block;
+    text-decoration: none;
+}
+
+.submenu-link:hover {
+    background-color: #f4f4f4;
+    color: #007bff;
+}
+
+.has-submenu:hover>.submenu,
+.nav-link {
+    display: block;
+}
+
+#show-mobile-menu {
+    border: none;
+    font-size: 34px;
+    background-color: white;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    color: #333;
+    transform: translateY(-50%);
+    display: none;
+}
+
+#hide-mobile-menu {
+    border: none;
+    color: #333;
+    display: none;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    transition: 0.5s ease;
+}
+
+#hide-mobile-menu button {
+    background-color: white;
+    font-size: 44px;
+    border: none;
+    margin-left: auto;
+}
+
+/* Home Section */
+.home-section {
+    background-color: #000;
+    background-image: url('../images/home-page.webp');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.home-content h1 {
+    font-size: 34px;
+    max-width: 800px;
+    margin-bottom: 10px;
+}
+
+.home-content p {
+    font-size: 14px;
+    max-width: 650px;
+    line-height: 1.5;
+    margin: 0 auto;
+}
+
+/* About Section */
+.about-section,
+.what-theracounsel-can-do {
+    background-color: #fff;
+    padding: 40px 20px;
+}
+
+.title-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.title-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.title-container span {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.about-container,
+.what-theracounsel-can-do .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.about-container .left-side,
+.what-theracounsel-can-do .right-side {
+    flex: 1;
+    padding: 20px;
+}
+
+.about-container p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about-container .right-side {
+    flex: 1;
+}
+
+.about-container .right-side img,
+.what-theracounsel-can-do .left-side img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* More About Us Section */
+.more-about-us {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.more-about-us h2 {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.more-about-us .cards-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.more-about-us .card {
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+}
+
+.more-about-us .card h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.more-about-us .card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    min-height: 80px;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #06c;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.button-link:hover {
+    background-color: #004d99;
+}
+
+/* What TheraCounsel Can Do Section */
+.what-theracounsel-can-do .right-side h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.what-theracounsel-can-do .right-side p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.what-theracounsel-can-do .right-side ul {
+    list-style-type: disc;
+    padding-left: 40px;
+    margin-bottom: 30px;
+}
+
+.what-theracounsel-can-do .right-side ul li {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.what-theracounsel-can-do .button-link {
+    margin-top: 20px;
+}
+
+/* Visit Us on Facebook Section */
+.visit-us-facebook {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.visit-us-facebook .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.visit-us-facebook .logo-link img {
+    max-width: 200px;
+    height: auto;
+}
+
+.visit-us-facebook .facebook-link {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 500;
+    color: #3b5998;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.visit-us-facebook .facebook-link i {
+    margin-right: 10px;
+    font-size: 30px;
+}
+
+/* Site Footer */
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.site-footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablets and below */
+@media (max-width: 1024px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .site-navigation {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: -100%;
+        top: 0;
+        overflow-y: auto;
+        display: block;
+        padding-top: 100px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        transition: 0.4s ease;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .nav-link {
+        font-size: 5vw;
+    }
+
+    .submenu {
+        position: static;
+        display: block;
+        padding-left: 40px;
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
+        width: 100%;
+    }
+
+    .submenu-link {
+        font-size: 4.5vw;
+        color: #888;
+    }
+
+    #show-mobile-menu {
+        display: block;
+    }
+
+    .home-section {
+        background-size: cover;
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .home-content h1 {
+        font-size: 32px;
+        max-width: 600px;
+    }
+
+    .about-container,
+    .what-theracounsel-can-do .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-container .left-side,
+    .what-theracounsel-can-do .right-side {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .more-about-us .cards-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .more-about-us .card {
+        width: 100%;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 768px) {
+    .home-section h1 {
+        font-size: 28px;
+    }
+
+    .home-content p {
+        font-size: 12px;
+    }
+
+    .about-container,
+    .what-theracounsel-can-do .container {
+        flex-direction: column;
+    }
+
+    .about-container .left-side,
+    .what-theracounsel-can-do .right-side {
+        padding: 15px;
+    }
+
+    .more-about-us .cards-container {
+        flex-direction: column;
+    }
+
+    .visit-us-facebook .facebook-link {
+        font-size: 20px;
+    }
+}
