@@ -666,13 +666,28 @@ h4 {
     text-decoration: underline;
 }
 
-.resources-table .answer ul{
+.resources-table .answer ul {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 5px;
     padding-left: 20px;
     margin-bottom: 20px;
+}
+
+.faq-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.faq-images-grid .image-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 1024px) {
@@ -782,6 +797,9 @@ h4 {
 }
 
 @media (max-width: 768px) {
+    .faq-images-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
 
     .resources-table th,
     .resources-table td {
