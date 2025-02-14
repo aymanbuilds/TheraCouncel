@@ -565,12 +565,10 @@ h4 {
     background-color: #fff;
 }
 
-/* Submit Button Styles */
 .request button[type="submit"] {
     width: 100%;
     padding: 12px;
     background-color: #06c;
-    /* Green color */
     border: none;
     border-radius: 4px;
     color: white;
@@ -579,14 +577,36 @@ h4 {
     transition: background-color 0.3s ease;
 }
 
-.request button[type="submit"]:hover {
-    background-color: #45a049;
-    /* Darker green on hover */
+.doctor-grid .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
+.doctor-grid .grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-/* Tablets and below */
+.doctor-grid .grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.doctor-grid .grid-item img:hover {
+    transform: scale(1.05);
+}
+
 @media (max-width: 1024px) {
+    .doctor-grid .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     .about-container .right-side img,
     .what-theracounsel-can-do .left-side img {
@@ -730,5 +750,11 @@ h4 {
 
     .visit-us-facebook .facebook-link {
         font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .doctor-grid .grid-container {
+        grid-template-columns: 1fr;
     }
 }
