@@ -619,8 +619,8 @@ h4 {
 }
 
 .title-container p {
-    font-size: 1rem;
-    color: #777;
+    font-size: 14px;
+    color: #444;
 }
 
 .resources-table-container {
@@ -657,7 +657,7 @@ h4 {
 }
 
 .resources-table a {
-    color: #1e90ff;
+    color: #056bd2;
     font-weight: 600;
     text-decoration: none;
 }
