@@ -666,6 +666,15 @@ h4 {
     text-decoration: underline;
 }
 
+.resources-table .answer ul{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
 @media (max-width: 1024px) {
     .doctor-grid .grid-container {
         grid-template-columns: repeat(2, 1fr);
