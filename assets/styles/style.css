@@ -199,7 +199,7 @@ h4 {
 .title-container span,
 .title-container p {
     font-size: 14px;
-    color: #555;
+    color: #444;
     line-height: 1.4;
     font-weight: 400;
     max-width: 600px;
@@ -240,13 +240,13 @@ h4 {
     margin: 0 auto;
     text-align: center;
     font-style: italic;
-    color: #555;
+    color: #444;
     margin-bottom: 20px;
 }
 
 .about-container p {
     font-size: 14px;
-    color: #555;
+    color: #444;
     line-height: 1.6;
     max-width: 700px;
     margin: 0 auto;
@@ -261,7 +261,7 @@ h4 {
 .about-container ul li {
     font-size: 13px;
     margin-bottom: 10px;
-    color: #555;
+    color: #444;
 }
 
 .about-container .right-side {
@@ -312,7 +312,7 @@ h4 {
 
 .more-about-us .card p {
     font-size: 14px;
-    color: #555;
+    color: #444;
     line-height: 1.6;
     margin-bottom: 20px;
     min-height: 80px;
@@ -342,7 +342,7 @@ h4 {
 
 .what-theracounsel-can-do .right-side p {
     font-size: 14px;
-    color: #555;
+    color: #444;
     margin-bottom: 20px;
     line-height: 1.6;
 }
@@ -424,7 +424,7 @@ h4 {
 
 .specialists p {
     font-size: 13px;
-    color: #555;
+    color: #444;
     line-height: 1.6;
     max-width: 1000px;
     text-align: center;
@@ -474,7 +474,7 @@ h4 {
 
 .specialist-card p {
     font-size: 13px;
-    color: #555;
+    color: #444;
     line-height: 1.6;
     max-width: 600px;
     text-align: center;
@@ -531,7 +531,7 @@ h4 {
 
 .request .title-container p {
     font-size: 14px;
-    color: #666;
+    color: #444;
 }
 
 /* Label Styles */
@@ -653,11 +653,12 @@ h4 {
 
 .resources-table td {
     font-size: 13px;
-    color: #555;
+    color: #444;
 }
 
 .resources-table a {
     color: #1e90ff;
+    font-weight: 600;
     text-decoration: none;
 }
 
