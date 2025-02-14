@@ -603,6 +603,68 @@ h4 {
     transform: scale(1.05);
 }
 
+.resources-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.title-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title-container h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.title-container p {
+    font-size: 1rem;
+    color: #777;
+}
+
+.resources-table-container {
+    overflow-x: auto;
+}
+
+.resources-table {
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resources-table th,
+.resources-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.resources-table th {
+    background-color: #f1f1f1;
+    font-size: 14px;
+    color: #333;
+}
+
+.resources-table td {
+    font-size: 13px;
+    color: #555;
+}
+
+.resources-table a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.resources-table a:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 1024px) {
     .doctor-grid .grid-container {
         grid-template-columns: repeat(2, 1fr);
@@ -710,6 +772,13 @@ h4 {
 }
 
 @media (max-width: 768px) {
+
+    .resources-table th,
+    .resources-table td {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
     .request form {
         padding: 15px;
     }
