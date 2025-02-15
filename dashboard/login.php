@@ -1,3 +1,32 @@
+<?php
+session_start();
+require 'config.php';
+
+if (isset($_SESSION['user_email'])) {
+    header("Location: blogs.php");
+    exit();
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $stmt = $pdo->prepare("SELECT password FROM users WHERE email = :email");
+    $stmt->bindParam(":email", $email);
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['user_email'] = $email;
+        header("Location: blogs.php");
+        exit();
+    }
+
+    header("Location: login.php?error=1");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +43,7 @@
 
 <body>
     <div class="login-container">
-        <form class="login-form">
+        <form class="login-form" method="POST">
             <h2>TheraCouncel</h2>
             <div class="input-group">
                 <label for="email">Email</label>

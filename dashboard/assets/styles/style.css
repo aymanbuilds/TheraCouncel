@@ -164,7 +164,8 @@ aside ul li::before {
     background-color: #06c;
 }
 
-aside ul li div {
+aside ul li div,
+aside ul li button {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -173,13 +174,30 @@ aside ul li div {
     font-weight: 500;
 }
 
+aside ul li button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
 aside ul li img {
     width: 16px;
     height: 16px;
 }
 
 aside .logout {
+    margin-top: 40px;
     background-color: rgb(254, 25, 25);
+    padding: 0;
+    height: 35px;
+}
+
+aside .logout button{
+    height: 35px;
+    padding-left: 10px;
 }
 
 aside .logout div {
@@ -436,6 +454,11 @@ button.cancel {
 
 #users-table tr:hover {
     background-color: #f1f1f1;
+}
+
+#blog-text-hidden,
+#update-text-hidden{
+    display: none;
 }
 
 @media (max-width: 1024px) {
