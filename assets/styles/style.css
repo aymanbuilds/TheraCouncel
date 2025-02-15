@@ -397,7 +397,6 @@ h4 {
     font-size: 30px;
 }
 
-/* Site Footer */
 .site-footer {
     background-color: #333;
     color: #fff;
@@ -408,6 +407,16 @@ h4 {
 .site-footer .container {
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.admin-space{
+    text-decoration: underline;
+    color: white;    
 }
 
 .specialists {
