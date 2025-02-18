@@ -136,6 +136,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
+            <a href="request-benefits.html" id="call-to-action" class="button-link">click here to book a session</a>
             <button id="show-mobile-menu" aria-label="Open menu">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"

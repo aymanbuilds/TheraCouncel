@@ -13,6 +13,11 @@ h4 {
     font-display: swap;
 }
 
+button{
+    border: none;
+    outline: none;
+}
+
 /* Site Header */
 .site-header {
     padding: 10px 20px;
@@ -44,12 +49,12 @@ h4 {
 
 .nav-item {
     position: relative;
-    margin: 0 15px;
+    margin: 0 5px;
 }
 
 .nav-link {
     color: #3a3636;
-    font-size: 15px;
+    font-size: 14px;
     padding: 10px 7px;
     transition: color 0.3s;
     text-decoration: none;
@@ -785,10 +790,14 @@ h4 {
         max-width: 100%;
     }
 
-    .header-container {
+    #call-to-action{
+        margin-right: 60px;
+    }
+
+    /* .header-container {
         flex-direction: column;
         align-items: flex-start;
-    }
+    } */
 
     .site-navigation {
         width: 100%;
@@ -938,5 +947,19 @@ h4 {
 @media (max-width: 480px) {
     .doctor-grid .grid-container {
         grid-template-columns: 1fr;
+    }
+
+    #call-to-action{
+        font-size: 12px;
+        padding: 5px 5px;
+        /* margin-right: 40px; */
+    }
+
+    .header-container .logo img{
+        transform: scale(0.6);
+    }
+
+    .site-header{
+        padding: 0;
     }
 }
