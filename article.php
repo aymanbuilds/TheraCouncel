@@ -1,3 +1,21 @@
+<?php
+require 'dashboard/config.php';
+
+if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+    $blog_id = intval($_GET['id']);
+
+    $stmt = $pdo->prepare("SELECT * FROM blogs WHERE id = ?");
+    $stmt->execute([$blog_id]);
+    $blog = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$blog) {
+        die("Blog not found!");
+    }
+} else {
+    die("Invalid blog ID!");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,10 +29,8 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="robots" content="index, follow">
 
-        <meta name="description"
-            content="Explore career opportunities at TheraCounsel. Licensed Clinical Social Workers with experience in long-term care can join our team and focus on practice.">
-        <meta name="keywords"
-            content="career opportunities, Licensed Clinical Social Worker, long term care, TheraCounsel, social worker jobs, administrative support, NASW, private practice jobs">
+        <meta name="description" content="Discover insights on <?= htmlspecialchars(substr($blog['title'], 0, 50)); ?>. Read our latest article on TheraCouncel to explore expert therapy advice and healing strategies.">
+        <meta name="keywords" content="TheraCouncel, mental health blog, therapy advice, emotional well-being, self-care, counseling, healing strategies, mental wellness, <?= htmlspecialchars(str_replace(' ', ', ', strtolower($blog['title']))); ?>">
 
         <meta property="og:title" content="TheraCouncel - Mental Health Support and Therapy in Fort Lauderdale">
         <meta property="og:description"
@@ -30,7 +46,7 @@
             content="TheraCouncel provides experienced mental health support and therapy in Fort Lauderdale, helping you heal and find emotional well-being.">
         <meta name="twitter:image" content="URL_to_image_for_social_sharing">
 
-        <title>Career Opportunities at TheraCounsel - Join Our Team</title>
+        <title>TheraCouncel | Read: <?= htmlspecialchars($blog['title']); ?></title>
 
         <link rel="preload" href="assets/images/home-page.webp" as="image">
         <link rel="preload"
@@ -131,59 +147,16 @@
 
     <main>
         <section class="home-section lazy dark-text cover-container"
-            data-bg="url('assets/images/mental-health-specialists-bg.webp')">
+            data-bg="<?= !empty($blog['image']) ? 'url(\'dashboard/' . $blog['image'] . '\')' : 'url(\'dashboard/assets/images/placeholder-image.jpg\')'; ?>">
             <div class="cover-layer"></div>
             <div class="home-content">
-                <h1>Interested In Joining TheraCounsel?</h1>
-                <p>If you are a Licensed Clinical Social Worker with at least five years of experience in long-term care
-                    and looking for an opportunity to focus on your practice rather than on administrative tasks,
-                    TheraCounsel offers a unique environment. We handle the regulatory demands so you can focus on
-                    providing quality care to your clients. Additionally, you will have the freedom of private practice
-                    without the headache of managing the business side.</p>
+                <h1><?= htmlspecialchars($blog['title']); ?></h1>
             </div>
         </section>
 
-        <section class="about-section">
-            <div class="title-container">
-                <h2>Empower Your Career in Mental Health and Long-Term Care</h2>
-                <p>At TheraCounsel, we offer an environment where you can grow your practice while benefiting from our
-                    support with the business side of things. Join a team that values your expertise and allows you to
-                    make an impact on clients' lives without the distraction of administrative headaches.</p>
-            </div>
-            <div class="about-container">
-                <div class="left-side">
-                    <h3>Interested In Joining TheraCounsel?</h3>
-                    <p>If you are a Licensed Clinical Social Worker in private practice, have at least five years of
-                        experience in long term care, and want to eliminate the headache of administrative costs and
-                        unending regulatory demands, you’ll want to take a look at what makes TheraCounsel a unique
-                        opportunity.
-                        <br><br>
-                        Candidates must be in good standing with NASW
-                    </p>
-                </div>
-                <div class="right-side">
-                    <img width="380" height="218" src="assets/images/career1.webp" alt="TheraCouncel team members"
-                        loading="lazy" />
-                </div>
-            </div>
-
-            <div class="about-container">
-                <div class="right-side swapped">
-                    <img width="380" height="218" src="assets/images/career2.webp" alt="TheraCouncel team members"
-                        loading="lazy" />
-                </div>
-                <div class="left-side">
-                    <h3>As a TheraCounsel Clinician you will have:</h3>
-                    <ul>
-                        <li>In-network privileges with major insurances</li>
-                        <li>Insurance claims, coding and billing done for you</li>
-                        <li>Reliable and timely remittance and flat fee payments</li>
-                        <li>Insurance regulatory compliance guarantee</li>
-                        <li>Unlimited use of insurance authorization software, EHR software, and billing software</li>
-                        <li>TheraCounsel brand recognition and usage</li>
-                    </ul>
-                </div>
-            </div>
+        <section class="article-section">
+        <p class="publish-date">Published on <?= date('F d, Y', strtotime($blog['created_at'])); ?> by TheraCouncel</p>
+        <div class="content"><?php echo strip_tags($blog['content'], '<p><a><b><strong><i><em><ul><ol><li><br><h1><h2><h3><h4><h5><h6>'); ?></div>
         </section>
 
         <section class="visit-us-facebook">

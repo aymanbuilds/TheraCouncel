@@ -1,3 +1,10 @@
+<?php
+require 'dashboard/config.php';
+
+$stmt = $pdo->query("SELECT * FROM blogs ORDER BY created_at DESC");
+$blogs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,9 +19,9 @@
         <meta name="robots" content="index, follow">
 
         <meta name="description"
-            content="Explore career opportunities at TheraCounsel. Licensed Clinical Social Workers with experience in long-term care can join our team and focus on practice.">
+            content="Stay informed with TheraCounsel’s expert mental health blogs. Read about therapy, self-care, emotional well-being, and healing strategies from professionals.">
         <meta name="keywords"
-            content="career opportunities, Licensed Clinical Social Worker, long term care, TheraCounsel, social worker jobs, administrative support, NASW, private practice jobs">
+            content="TheraCouncel blog, mental health tips, therapy insights, emotional well-being, counseling, self-care, healing, Fort Lauderdale, mental health support, therapy advice">
 
         <meta property="og:title" content="TheraCouncel - Mental Health Support and Therapy in Fort Lauderdale">
         <meta property="og:description"
@@ -30,7 +37,7 @@
             content="TheraCouncel provides experienced mental health support and therapy in Fort Lauderdale, helping you heal and find emotional well-being.">
         <meta name="twitter:image" content="URL_to_image_for_social_sharing">
 
-        <title>Career Opportunities at TheraCounsel - Join Our Team</title>
+        <title>TheraCouncel Blog - Mental Health Tips & Therapy Insights</title>
 
         <link rel="preload" href="assets/images/home-page.webp" as="image">
         <link rel="preload"
@@ -130,61 +137,38 @@
     </header>
 
     <main>
-        <section class="home-section lazy dark-text cover-container"
+        <section id="blogs-home-section" class="home-section lazy dark-text cover-container"
             data-bg="url('assets/images/mental-health-specialists-bg.webp')">
             <div class="cover-layer"></div>
             <div class="home-content">
-                <h1>Interested In Joining TheraCounsel?</h1>
-                <p>If you are a Licensed Clinical Social Worker with at least five years of experience in long-term care
-                    and looking for an opportunity to focus on your practice rather than on administrative tasks,
-                    TheraCounsel offers a unique environment. We handle the regulatory demands so you can focus on
-                    providing quality care to your clients. Additionally, you will have the freedom of private practice
-                    without the headache of managing the business side.</p>
+                <h1>TheraCouncel Blog - Your Guide to Mental Wellness</h1>
+                <p>Welcome to the TheraCouncel Blog! Here, we share expert insights, therapy tips, and mental health strategies to help you navigate life’s challenges. Whether you're looking for self-care ideas, guidance on emotional healing, or professional therapy advice, our blog is a valuable resource for your mental well-being.</p>
             </div>
         </section>
 
-        <section class="about-section">
-            <div class="title-container">
-                <h2>Empower Your Career in Mental Health and Long-Term Care</h2>
-                <p>At TheraCounsel, we offer an environment where you can grow your practice while benefiting from our
-                    support with the business side of things. Join a team that values your expertise and allows you to
-                    make an impact on clients' lives without the distraction of administrative headaches.</p>
-            </div>
-            <div class="about-container">
-                <div class="left-side">
-                    <h3>Interested In Joining TheraCounsel?</h3>
-                    <p>If you are a Licensed Clinical Social Worker in private practice, have at least five years of
-                        experience in long term care, and want to eliminate the headache of administrative costs and
-                        unending regulatory demands, you’ll want to take a look at what makes TheraCounsel a unique
-                        opportunity.
-                        <br><br>
-                        Candidates must be in good standing with NASW
-                    </p>
-                </div>
-                <div class="right-side">
-                    <img width="380" height="218" src="assets/images/career1.webp" alt="TheraCouncel team members"
-                        loading="lazy" />
-                </div>
-            </div>
+        <section class="specialists">
+            <div class="specialist-container">
+                <h2>Explore Our Latest Mental Health Articles</h2>
+                <p>Discover insightful articles on therapy, self-care, and emotional well-being. Our expert-written blogs provide valuable guidance to support your mental health journey. Whether you're seeking coping strategies, mindfulness tips, or expert advice, you'll find helpful resources right here.</p>
 
-            <div class="about-container">
-                <div class="right-side swapped">
-                    <img width="380" height="218" src="assets/images/career2.webp" alt="TheraCouncel team members"
-                        loading="lazy" />
-                </div>
-                <div class="left-side">
-                    <h3>As a TheraCounsel Clinician you will have:</h3>
-                    <ul>
-                        <li>In-network privileges with major insurances</li>
-                        <li>Insurance claims, coding and billing done for you</li>
-                        <li>Reliable and timely remittance and flat fee payments</li>
-                        <li>Insurance regulatory compliance guarantee</li>
-                        <li>Unlimited use of insurance authorization software, EHR software, and billing software</li>
-                        <li>TheraCounsel brand recognition and usage</li>
-                    </ul>
+                <div class="specialists-grid">
+                <?php foreach ($blogs as $blog): ?>
+                    <a class='blog-card-hyperlink' href="article.php?id=<?php echo $blog['id'] ?>">
+                        <div class="specialist-card">
+                            <div class="specialist-card-image">
+                                <img class="wide-blog-image" src="<?= !empty($blog['image']) ? 'dashboard/' . $blog['image'] : 'dashboard/assets/images/placeholder-image.jpg'; ?>" 
+                                    alt="<?= htmlspecialchars($blog['title']); ?>" 
+                                    loading="lazy">
+                            </div>
+                            <h3><?= htmlspecialchars($blog['title']); ?></h3>
+                            <p><?= strip_tags(substr($blog['content'], 0, 150)) . '...'; ?></p>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
                 </div>
             </div>
         </section>
+
 
         <section class="visit-us-facebook">
             <div class="container">
